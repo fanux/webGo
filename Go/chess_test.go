@@ -1,1 +1,1 @@
-package chess
+package gochess
