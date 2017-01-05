@@ -25,4 +25,4 @@
 * worker receive the Lazi location, return back the resault(is the Lazi invalid, and eat chess pieces info)
 * publish to client1 and client2
 
-We can scale up the workers, and using multiple worker to ensuring play reliability.
+We can scale up the workers, and using multiple workers to ensuring play reliability.

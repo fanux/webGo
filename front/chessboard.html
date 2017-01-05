@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<img src="black130.png" id="lamp" />
+<canvas id="myCanvas" style="background-image: url(boardbk0.png);" width=669 height=669></canvas>
+
+
+<script type="text/javascript">
+var canvas=document.getElementById('myCanvas');
+var ctx=canvas.getContext('2d');
+ctx.clearRect(0,0,canvas.width,canvas.height);
+var img=document.getElementById("lamp");
+var pat=ctx.createPattern(img,'no-repeat');
+ctx.rect(0,0,150,100);
+ctx.fillStyle=pat;
+ctx.fill();
+
+</script>
+
+</body>
+</html>
