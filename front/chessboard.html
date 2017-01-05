@@ -9,16 +9,29 @@
 
 <script type="text/javascript">
 var canvas=document.getElementById('myCanvas');
-canvas.width = 669;
-canvas.height = 669;
+var chessBoardSize = 19;
+canvas.width = 35*(chessBoardSize - 1) + 40;
+canvas.height = 35*(chessBoardSize - 1) + 40;
 var ctx=canvas.getContext('2d');
+
+
+for (var i=0;i<chessBoardSize;i++){
+    ctx.moveTo(20+i*35,20);
+    ctx.lineTo(20+i*35,35*(chessBoardSize - 1)+20);
+    ctx.stroke();
+
+    ctx.moveTo(20,20+i*35);
+    ctx.lineTo(35*(chessBoardSize - 1)+20,20+i*35);
+    ctx.stroke();
+}
+
 var img=document.getElementById("black");
 img.onload = function(){
  ctx.drawImage(img,0,0,35,35);
 }
 var img1=document.getElementById("white");
 img1.onload = function(){
- ctx.drawImage(img1,36,0,35,35);
+ ctx.drawImage(img1,35,0,35,35);
 }
 </script>
 
