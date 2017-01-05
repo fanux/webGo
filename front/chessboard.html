@@ -134,6 +134,17 @@ function clean(x,y) {
     ctx.stroke();
 }
 
+//from canvas point to Go point
+canvas.addEventListener("click",function(evt){
+   var rect = canvas.getBoundingClientRect();
+   var x= evt.clientX - rect.left * (canvas.width / rect.width);
+   var y= evt.clientY - rect.top * (canvas.height / rect.height);
+
+   var i = parseInt((x - 2.4)/35);
+   var j = parseInt((y - 2.4)/35);
+   console.log(i,j);
+},false);
+
 </script>
 
 </body>
