@@ -35,14 +35,79 @@ for (i=0;i<3;i++) {
     }
 }
 
+/*
 var img=document.getElementById("black");
 img.onload = function(){
- ctx.drawImage(img,0,0,35,35);
+    ctx.drawImage(img,2.5,2.5,35,35);
 }
+
 var img1=document.getElementById("white");
 img1.onload = function(){
- ctx.drawImage(img1,35,0,35,35);
+    ctx.drawImage(img1,2.5,37.5,35,35);
 }
+
+var img1=document.getElementById("black");
+img1.onload = function(){
+    ctx.drawImage(img1,37.5,2.5,35,35);
+}
+
+var img2=document.getElementById("white");
+img1.onload = function(){
+    ctx.drawImage(img1,37.5,37.5,35,35);
+}
+*/
+
+// 0<=x,y<19 is the Go position. state may black white or clean;
+/*
+function setState(x,y,state){
+    if (x<0 || x>18 || y<0 || y>18) {
+        return
+    }
+    if (state != "clean") {
+        var img=document.getElementById(state);
+        img.onload = function(){
+            //ctx.beginPath();
+            ctx.drawImage(img,2.5 + x*35,2.5 + y*35,35,35);
+            //ctx.closePath();
+        }
+    } else {
+        clean(x,y);
+    }
+}
+*/
+var imgBlack=document.getElementById("black");
+var imgWhite=document.getElementById("white");
+
+function setState(x,y,state){
+    if (x<0 || x>18 || y<0 || y>18) {
+        return
+    }
+    if (state == "black") {
+        ctx.drawImage(imgBlack,2.5 + x*35,2.5 + y*35,35,35);
+    } else if (state == "white"){
+        ctx.drawImage(imgWhite,2.5 + x*35,2.5 + y*35,35,35);
+    } else {
+        clean(x,y);
+    }
+}
+
+// image.onload just call once.
+imgBlack.onload = function() {
+    setState(0,1,"black");
+    setState(18,18,"black");
+    setState(18,17,"black");
+    setState(16,18,"black");
+    setState(18,15,"black");
+}
+imgWhite.onload = function() {
+    setState(1,1,"white");
+    setState(0,0,"white");
+}
+
+//clean position (x,y)
+function clean(x,y) {
+}
+
 </script>
 
 </body>
