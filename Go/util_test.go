@@ -35,6 +35,17 @@ func TestLazi(t *testing.T) {
 	Lazi(chessManual, DropPoint{PointStateBlack, 1, 2, ""})
 	Lazi(chessManual, DropPoint{PointStateWhite, 1, 3, ""})
 	Lazi(chessManual, DropPoint{PointStateBlack, 1, 2, ""})
+
+	fmt.Println("=======eat multipart=====")
+	//Test daerhuanyi
+	chessboard = Chessboard{Size: 5, Points: [][]int{
+		{0, 1, 1, 2, 1},
+		{1, 2, 0, 0, 2},
+		{0, 1, 1, 2, 1},
+		{0, 0, 0, 1, 0},
+		{0, 0, 0, 0, 0}}}
+	chessManual = &ChessManual{&chessboard, [2]*Player{nil, nil}, 0, 0, []DropPoint{{PointStateWhite, 0, 0, ""}}}
+	Lazi(chessManual, DropPoint{PointStateWhite, 1, 3, ""})
 }
 
 func TestIsDead(t *testing.T) {
