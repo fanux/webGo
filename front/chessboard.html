@@ -106,6 +106,32 @@ imgWhite.onload = function() {
 
 //clean position (x,y)
 function clean(x,y) {
+    //clean chess pieces
+    ctx.clearRect(2.5 + x*35,2.5 + y*35,35,35);
+    //add line
+    ctx.moveTo(20+x*35,20+y*35);
+    if (y > 0) {
+        ctx.lineTo(20+x*35,2.5 + y*35);
+    }
+    ctx.stroke();
+
+    ctx.moveTo(20+x*35,20+y*35);
+    if (x > 0) {
+        ctx.lineTo(2.5+x*35,20 + y*35);
+    }
+    ctx.stroke();
+
+    ctx.moveTo(20+x*35,20+y*35);
+    if (y < 18) {
+        ctx.lineTo(20+x*35,37.5 + y*35);
+    }
+    ctx.stroke();
+
+    ctx.moveTo(20+x*35,20+y*35);
+    if (x < 18) {
+        ctx.lineTo(37.5+x*35,20 + y*35);
+    }
+    ctx.stroke();
 }
 
 </script>
