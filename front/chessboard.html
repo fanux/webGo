@@ -24,6 +24,16 @@ for (var i=0;i<chessBoardSize;i++){
     ctx.lineTo(35*(chessBoardSize - 1)+20,20+i*35);
     ctx.stroke();
 }
+var stars = [3,9,15];
+ctx.fillStyle="black";
+for (i=0;i<3;i++) {
+    for (var j=0;j<3;j++) {
+        ctx.beginPath();
+        ctx.arc(20+stars[i]*35,20+stars[j]*35,5,0,Math.PI*2,true);
+        ctx.closePath();
+        ctx.fill();
+    }
+}
 
 var img=document.getElementById("black");
 img.onload = function(){
