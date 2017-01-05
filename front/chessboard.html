@@ -2,7 +2,8 @@
 <html>
 <body>
 
-<img src="/Users/fanux/Desktop/webGo/black130.png" id="lamp" alt="black"/>
+<img src="black130.png" id="black" alt="black"/>
+<img src="white130.png" id="white" alt="white"/>
 <canvas id="myCanvas" style="background-image: url(boardbk0.png);" ></canvas>
 
 
@@ -11,9 +12,13 @@ var canvas=document.getElementById('myCanvas');
 canvas.width = 669;
 canvas.height = 669;
 var ctx=canvas.getContext('2d');
-var img=document.getElementById("lamp");
+var img=document.getElementById("black");
 img.onload = function(){
  ctx.drawImage(img,0,0,35,35);
+}
+var img1=document.getElementById("white");
+img1.onload = function(){
+ ctx.drawImage(img1,36,0,35,35);
 }
 </script>
 
