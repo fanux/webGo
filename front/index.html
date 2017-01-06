@@ -87,9 +87,9 @@ function setState(x,y,state){
     }
     ctx.beginPath();
     if (state == "black") {
-        ctx.drawImage(imgBlack,2.5 + x*35,2.5 + y*35,38,38);
+        ctx.drawImage(imgBlack,2,1,65,65,2.5 + x*35,2.5 + y*35,36,35);
     } else if (state == "white"){
-        ctx.drawImage(imgWhite,2.5 + x*35,2.5 + y*35,38,38);
+        ctx.drawImage(imgWhite,2,1,65,65,2.5 + x*35,2.5 + y*35,36,35);
     } else {
         clean(x,y);
     }
@@ -114,7 +114,7 @@ imgWhite.onload = function() {
 //clean position (x,y)
 function clean(x,y) {
     //clean chess pieces
-    ctx.clearRect(4.5 + x*35,3.5 + y*35,35,35);
+    ctx.clearRect(2.5 + x*35,2.5 + y*35,36,35);
     //add line
     ctx.moveTo(20+x*35,20+y*35);
     if (y > 0) {
