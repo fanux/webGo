@@ -88,13 +88,10 @@ function setState(x,y,state){
     ctx.beginPath();
     if (state == "black") {
         ctx.drawImage(imgBlack,2.5 + x*35,2.5 + y*35,38,38);
-        console.log("*****black*****",x,y,state);
     } else if (state == "white"){
         ctx.drawImage(imgWhite,2.5 + x*35,2.5 + y*35,38,38);
-        console.log("*****white*****",x,y,state);
     } else {
         clean(x,y);
-        console.log("*****clean*****",x,y,state);
     }
     ctx.closePath();
 }
@@ -116,9 +113,8 @@ imgWhite.onload = function() {
 
 //clean position (x,y)
 function clean(x,y) {
-    console.log("clean:",x,",",y);
     //clean chess pieces
-    ctx.clearRect(2.5 + x*35,2.5 + y*35,35,35);
+    ctx.clearRect(4.5 + x*35,3.5 + y*35,35,35);
     //add line
     ctx.moveTo(20+x*35,20+y*35);
     if (y > 0) {
