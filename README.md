@@ -1,3 +1,6 @@
+## View
+![](https://github.com/fanux/webGo/blob/master/front/demo.png?raw=true)
+
 ## Architecture
 ```
                                                                  ┌────────────────────┐
