@@ -29,3 +29,13 @@
 * publish to client1 and client2
 
 We can scale up the workers, and using multiple workers to ensuring play reliability.
+
+### Quick start
+```
+$ go get github.com/nats-io/gnatsd
+$ go get github.com/fanux/webGo
+$ gnatsd&
+$ go run main.go run &
+$ go run main.go front 
+```
+Open your browser, `http://localhost:9090`, enjoy it!
